@@ -37,7 +37,7 @@ const startIpfs = (type, config = {}) => {
       .create(testAPIs[type])
       .spawn(config, async (err, ipfsd) => {
         if (err) {
-          reject(err)
+          return reject(err)
         }
         resolve(ipfsd.api)
       })
